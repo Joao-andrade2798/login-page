@@ -1,1 +1,31 @@
-<app-default-login-layout></app-default-login-layout>
+<app-default-login-layout
+title="Login into yout account"
+primaryBtnText="Login Now"
+secondaryBtnText="Signup Now"
+(submit)="submit()"
+(navigate)="navigate()"
+[disablePrimaryBtn]="!loginForm.valid"
+>
+
+<form [formGroup]="loginForm">
+    <app-primary-input
+        formControlName="email"
+        inputName="email"
+        type="email"
+        label="Email"
+        placeHolder="johndoe@gmail.com"
+    > 
+    <img src="/assets/email-icon.svg"> 
+    </app-primary-input>
+    <app-primary-input
+        formControlName="password"
+        inputName="password"
+        type="password"
+        label="Password"
+        placeHolder="Enter your password"
+    > 
+    <img src="/assets/password-icon.svg"> 
+    </app-primary-input>
+    <span>Forgot password?</span>
+</form>
+</app-default-login-layout>
